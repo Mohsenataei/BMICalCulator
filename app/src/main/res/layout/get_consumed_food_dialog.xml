@@ -68,21 +68,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <EditText
-        android:textAlignment="center"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:paddingEnd="5dp"
-        android:paddingStart="5dp"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/bmi_30_to_40"
-        android:textColorHint="@color/bmi_20_to_25"
-        android:layout_gravity="end"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/amount_background"
-        android:hint="میزان مصرف را وارد کنید"
-        android:id="@+id/counsumed_amount_edit_text"
-        android:inputType="number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:weightSum="5"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="گرم"
+            android:textAlignment="center"
+            android:textColor="@color/bmi_25_to_30"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/amount_background"/>
+        <TextView
+            android:text="لیوان"
+            android:textAlignment="center"
+            android:textColor="@color/bmi_25_to_30"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/amount_background"
+            />
+        <EditText
+            android:layout_weight="3"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/bmi_30_to_40"
+            android:textColorHint="@color/bmi_20_to_25"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/amount_background"
+            android:hint="میزان مصرف را وارد کنید"
+            android:autofillHints="auto fill hint"
+            android:id="@+id/counsumed_amount_edit_text"
+            android:inputType="number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+
+
 </LinearLayout>
