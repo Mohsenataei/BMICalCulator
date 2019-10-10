@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">محاسبه شاخص توده بدنی</string>
+    <string name="bmi">BMI</string>
+    <string name="sport_music">موسیقی ورزشی</string>
+    <string name="health">تغذیه و سلامت</string>
+    <string name="clip">کلیپ ورزشی</string>
+    <string name="newspapers">روزنامه ها</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sport_news">اخبار ورزشی</string>
+    <string name="network_error">خطا در برقراری ارتباط با سرور</string>
+    <string name="sport_diet">رژیم غذایی</string>
+    <string name="sport_food">خواص مواد غذایی</string>
+    <string name="sport_injury">آسیب دیدگی ها</string>
+    <string name="fitness">بدنسازی</string>
+    <string name="home">ورزش در خانه</string>
+    <string name="aerobic">ایروبیک</string>
+    <string name="trx">TRX</string>
+    <string name="ems">EMS</string>
+    <string name="default_duration">00:00</string>
+    <string name="sarshane">سرشانه</string>
+    <string name="jelobazoo">بازو</string>
+    <string name="zirbaghal">زیر بغل</string>
+    <string name="sine">سینه</string>
+    <string name="pa">پا</string>
+    <string name="shekam">شکم/فیله</string>
+    <string name="btmi_title_height">قد به سانتی متر</string>
+    <string name="btmi_title_wight">وزن به کیلوگرم</string>
+    <string name="bmi_title_age">سن</string>
+    <string name="bmi_result_title">شاخص توده بدنی شما:</string>
+    <string name="weight_renge_title">محدوده وزن طبیعی</string>
+    <string name="bmi_more_than_40_description">اضافه وزن خطرناک</string>
+    <string name="bmi_more_than_40">بیشتر از  ۴۰</string>
+    <string name="bmi_30_to_40_description">اضافه وزن زیاد</string>
+    <string name="bmi_30_to_40">۳۰ تا ۴۰</string>
+    <string name="bmi_25_to_30">۲۵ تا ۳۰</string>
+    <string name="bmi_25_to_30_description">اضافه وزن</string>
+    <string name="bmi_20_to_25">۲۰ تا ۲۵</string>
+    <string name="bmi_20_to_25_description">وزن ایده آل</string>
+    <string name="bmi_18.5_to_20">۱۸.۵ تا ۲۰</string>
+    <string name="bmi_18.5_to_20_description">لاغر</string>
+    <string name="bmi_below_18.5">کمتر از ۱۸.۵</string>
+    <string name="bmi_below_18.5_description">لاغری شدید</string>
+    <string name="newspaper_read_more">مشاهده تصویر صفحه اول</string>
+    <string name="read_more">مشاهده متن کامل</string>
+    <string name="watch_video">مشاهده ویدیو</string>
+    <string name="share">اشتراک گذاری</string>
+    <string name="download_description">دانلود اپلیکیشن ورزش روزانه از لینک زیر:</string>
+    <string name="share_using">اشتراک گذاری با</string>
+    <string name="download_url">https://goo.gl/P5uld</string>
+
+    <string name="ok">تائید</string>
+    <string name="result_failed">خطا در دریافت اطلاعات</string>
+    <string name="show_result"><u>مشاهده نتایج</u></string>
+
+    <string name="login_message_1"> </string>
+    <string name="login_message_2"> </string>
+    <string name="error_ok">باشه</string>
+    <string name="login_message">عضویت دراپلیکیشن ورزش روزانه با تعرفه روزانه پانصد تومان</string>
+    <string name="i_agree_link">با شرایط سرویس موافقم</string>
+    <string name="title_activity_laws">LawsActivity</string>
+    <string name="laws_intro">سرویس ورزش روزانه یک اپ  ورزشی با ویدئوهای آموزشی در شاخه‌های مختلف ورزشی و ابزارهای متفاوت همچون محاسبه BMI می باشد</string>
+    <string name="laws_intro2">اپلیکیشن ورزش روزانه برنامه‌ای برای سنجش BMI یا میزان شاخص توده بدنی می‌باشد که ارائه دهنده آن شرکت توکان مهام فن می‌باشد . که میزان چاقی و لاغری را اندازه گیری می‌کند همچنین دارای صدها فیلم آموزشی در رابطه با فیتنس و تی آر ایکس و ورزشهای نرمشی در خانه است که راهنمای ورزش ، تغذیه و رژیم سالم برای شماست. با مطالب متنوع آموزشی و سرگرم کننده می‌توانید سطح معلومات خود در زمینه تمرینات و اخبار ورزشی افزایش دهید.</string>
+    <string name="laws_phone">پشتیبانی: ۰۲۱-۲۶۲۹۱۶۴۷</string>
+    <string name="laws_app_name">اپ ورزش روزانه</string>
+    <string name="laws_feature1">- آموزش بدنسازی</string>
+    <string name="laws_feature2">- آموزش TRX</string>
+    <string name="laws_feature3">- اخبار و روزنامه‌های ورزشی</string>
+    <string name="laws_feature4">- محاسبه BMI</string>
+    <string name="laws_final_description">هزینه روزانه عضویت در سرویس  پانصد تومان است که هزینه  سرویس برای مشترکین دائمی روی قبض اعمال گردیده و برای مشترکین اعتباری از شارژ سیم   کارت کسر می‌شود.</string>
+    <string name="laws_title">شرایط سرویس</string>
+    <string name="app_name_login">اپلیکیشن ورزش روزانه</string>
+    <string name="app_description_login">جهت ورود و استفاده از ویدئوهای آموزشی شماره تلفن خود را وارد نمائید.</string>
+    <string name="unsub">لغو اشتراک</string>
+    <string name="support">پشتیبانی</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+</resources>

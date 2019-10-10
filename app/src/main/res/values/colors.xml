@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#939393</color>
+    <color name="colorAccent">#7447c8</color>
+    <color name="color_tab">#c9df9a</color>
+    <color name="tab_inactive">#b4b4b4</color>
+    <color name="toolbar_background">#f2f2f2</color>
+    <color name="default_background_color">#f3f3f3</color>
+
+    <color name="black">#000</color>
+    <color name="white">#ffffff</color>
+    <color name="tab_text_color">#595959</color>
+    <color name="bmi_progress_background">#9a86c1</color>
+    <color name="bmi_more_than_40">#7343c6</color>
+    <color name="bmi_30_to_40">#8950ed</color>
+    <color name="bmi_25_to_30">#9054f9</color>
+    <color name="bmi_20_to_25">#9a5fff</color>
+    <color name="bmi_18.5_to_20">#ad7dff</color>
+    <color name="bmi_below_18.5">#b488ff</color>
+    <color name="thumb_color">#d7d7d7</color>
+    <color name="seekbar_background_color">#dfdfdf</color>
+    <color name="text_shadow">#26000000</color>
+</resources>

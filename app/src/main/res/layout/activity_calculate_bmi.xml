@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:lib="http://schemas.android.com/apk/res-auto"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.mohsen.calculatebmi.activity.CalculateBMI"
+    android:background="@color/default_background_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_2"
+            android:orientation="vertical"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/space_2"
+                >
+
+                <TextView
+                    android:id="@+id/bmi_title_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btmi_title_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/space_4"
+                    style="@style/TextView.Bold.BMITitle"
+                    />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bmi_seekbar_hight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    lib:bsb_hide_bubble="true"
+                    app:bsb_progress="0"
+                    lib:bsb_track_size="8dp"
+                    app:bsb_track_color="@color/seekbar_background_color"
+                    lib:bsb_thumb_color="@color/thumb_color"
+                    lib:bsb_second_track_size="8dp"
+                    android:layout_toLeftOf="@id/bmi_title_height"
+                    android:layout_alignTop="@id/bmi_title_height"
+                    android:layout_marginRight="@dimen/space_2"
+                    />
+
+                <SeekBar
+                    android:id="@+id/hi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/bmi_title_height"
+                    android:layout_alignTop="@id/bmi_title_height"
+                    android:layout_marginRight="@dimen/space_2"
+                    android:min="130"
+                    android:max="220"
+                    android:maxHeight="20dip"
+                    android:minHeight="20dip"
+                    android:visibility="invisible"
+                    style="@style/BMISeekBar"
+                    />
+
+                <TextView
+                    android:id="@+id/bmi_title_wight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btmi_title_wight"
+                    android:layout_below="@id/bmi_seekbar_hight"
+                    android:layout_alignRight="@id/bmi_title_height"
+                    android:layout_marginTop="@dimen/space_6"
+                    style="@style/TextView.Bold.BMITitle"
+                    />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bmi_seekbar_weight"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    lib:bsb_hide_bubble="true"
+                    app:bsb_progress="0"
+                    lib:bsb_track_size="8dp"
+                    app:bsb_track_color="@color/seekbar_background_color"
+                    lib:bsb_thumb_color="@color/thumb_color"
+                    lib:bsb_second_track_size="8dp"
+                    android:layout_alignTop="@id/bmi_title_wight"
+                    android:layout_alignRight="@id/bmi_seekbar_hight"
+                    />
+
+                <!--<SeekBar-->
+                <!--android:id="@+id/bmi_seekbar_weight"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignRight="@id/bmi_seekbar_hight"-->
+                <!--android:layout_alignTop="@id/bmi_title_wight"-->
+                <!--android:min="30"-->
+                <!--android:max="200"-->
+                <!--style="@style/BMISeekBar"-->
+                <!--/>-->
+
+                <TextView
+                    android:id="@+id/bmi_hight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/bmi_seekbar_hight"
+                    android:layout_alignLeft="@id/bmi_seekbar_hight"
+                    android:layout_above="@id/bmi_seekbar_hight"
+                    style="@style/TextView.Bold.BMIInputValue"
+                    />
+
+                <TextView
+                    android:id="@+id/bmi_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/bmi_seekbar_hight"
+                    android:layout_alignLeft="@id/bmi_seekbar_hight"
+                    android:layout_above="@id/bmi_seekbar_weight"
+                    style="@style/TextView.Bold.BMIInputValue"
+                    />
+
+                <!--<TextView-->
+                <!--android:id="@+id/bmi_title_age"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/bmi_title_age"-->
+                <!--android:layout_below="@id/bmi_seekbar_weight"-->
+                <!--android:layout_alignRight="@id/bmi_title_height"-->
+                <!--android:layout_marginTop="@dimen/space_5"-->
+                <!--style="@style/TextView.BMITitle"-->
+                <!--/>-->
+
+                <!--<SeekBar-->
+                <!--android:id="@+id/bmi_seekbar_age"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignRight="@id/bmi_seekbar_hight"-->
+                <!--android:layout_alignTop="@id/bmi_title_age"-->
+                <!--style="@style/BMISeekBar"-->
+                <!--/>-->
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/space_5"
+                android:paddingBottom="@dimen/space_5"
+                >
+
+                <TextView
+                    android:id="@+id/bmi_result_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bmi_result_title"
+                    android:textSize="@dimen/text_size_large"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/space_4"
+                    android:layout_alignParentRight="true"
+                    />
+
+                <TextView
+                    android:id="@+id/bmi_result_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weight_renge_title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/bmi_result_title"
+                    android:layout_marginTop="@dimen/space_3"
+                    style="@style/TextView.Bold"
+                    />
+
+                <at.grabner.circleprogress.CircleProgressView
+                    android:id="@+id/bmi_progress"
+                    android:layout_width="@dimen/bmi_progress_size"
+                    android:layout_height="@dimen/bmi_progress_size"
+                    CircleProgressView:cpv_autoTextSize="true"
+                    CircleProgressView:cpv_barColor="@color/colorAccent"
+                    CircleProgressView:cpv_barWidth="15dp"
+                    CircleProgressView:cpv_innerContourSize="0dp"
+                    CircleProgressView:cpv_outerContourSize="0dp"
+                    CircleProgressView:cpv_rimColor="@color/bmi_progress_background"
+                    CircleProgressView:cpv_rimWidth="15dp"
+                    CircleProgressView:cpv_spinColor="@color/colorAccent"
+                    CircleProgressView:cpv_textColor="@color/colorAccent"
+                    CircleProgressView:cpv_textScale="0.7"
+                    CircleProgressView:cpv_unitColor="@color/bmi_progress_background"
+                    android:textDirection="ltr"
+                    lib:cpv_maxValue="50"
+                    lib:cpv_maxValueAllowed="50"
+                    lib:cpv_textMode="Text"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="1dp"
+                android:background="@color/colorAccent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/bmi_more_than_40_description"
+                        style="@style/TextView.BMITableDescription"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bmi_more_than_40"
+                        android:background="@color/bmi_more_than_40"
+                        style="@style/TextView.BMITableTitle"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/bmi_30_to_40_description"
+                        style="@style/TextView.BMITableDescription"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bmi_30_to_40"
+                        android:background="@color/bmi_30_to_40"
+                        style="@style/TextView.BMITableTitle"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/bmi_25_to_30_description"
+                        style="@style/TextView.BMITableDescription"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bmi_25_to_30"
+                        android:background="@color/bmi_25_to_30"
+                        style="@style/TextView.BMITableTitle"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/bmi_20_to_25_description"
+                        style="@style/TextView.BMITableDescription"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bmi_20_to_25"
+                        android:background="@color/bmi_20_to_25"
+                        style="@style/TextView.BMITableTitle"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/bmi_18.5_to_20_description"
+                        style="@style/TextView.BMITableDescription"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bmi_18.5_to_20"
+                        android:background="@color/bmi_18.5_to_20"
+                        style="@style/TextView.BMITableTitle"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="1dp"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="@string/bmi_below_18.5_description"
+                        style="@style/TextView.BMITableDescription"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bmi_below_18.5"
+                        android:background="@color/bmi_below_18.5"
+                        style="@style/TextView.BMITableTitle"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

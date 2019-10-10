@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.FoodCategoryFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp">
+        <ExpandableListView
+            android:id="@+id/expandableListView"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"
+            android:divider="@color/bmi_30_to_40"
+            android:childDivider="@color/bmi_more_than_40"
+            android:dividerHeight="1dp" />
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
