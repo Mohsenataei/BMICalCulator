@@ -119,5 +119,24 @@
         <item name="titleTextColor">@color/white</item>
     </style>
 
+    <style name="FoodDialogTextViews" parent="AppTheme.NoActionBar">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:textColor">@color/bmi_25_to_30</item>
+        <item name="android:text">"ارزش غذایی"</item>
+
+    </style>
+
+    <style name="ConsumedAmount" parent="AppTheme.NoActionBar">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:textColor">@color/bmi_25_to_30</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@drawable/amount_background</item>
+    </style>
+
+
 
 </resources>

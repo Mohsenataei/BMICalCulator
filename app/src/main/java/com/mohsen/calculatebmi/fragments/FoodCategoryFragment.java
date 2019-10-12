@@ -1,5 +1,6 @@
 package com.mohsen.calculatebmi.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.mohsen.calculatebmi.R;
 import com.mohsen.calculatebmi.adapter.CustomExpandableListAdapter;
+import com.mohsen.calculatebmi.dialogs.ConsumedFoodDialog;
 import com.mohsen.calculatebmi.model.ExpandableListDataPump;
 
 import java.util.ArrayList;
@@ -23,10 +25,15 @@ import java.util.List;
 
 public class FoodCategoryFragment extends Fragment {
 
-    ExpandableListView expandableListView;
-    ExpandableListAdapter expandableListAdapter;
-    List<String> expandableListTitle;
-    HashMap<String, List<String>> expandableListDetail;
+    private ExpandableListView expandableListView;
+    private ExpandableListAdapter expandableListAdapter;
+    private List<String> expandableListTitle;
+    private HashMap<String, List<String>> expandableListDetail;
+     private static final int BREAKFAST = 0;
+     private static final int LUANCH = 1;
+     private static final int DINNER = 2;
+     private static final int MIANVADE = 3;
+
 
 //    expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
 //        expandableListDetail = ExpandableListDataPump.getData();
@@ -92,6 +99,10 @@ public class FoodCategoryFragment extends Fragment {
                                 expandableListTitle.get(groupPosition)).get(
                                 childPosition), Toast.LENGTH_SHORT
                 ).show();
+                ConsumedFoodDialog consumedFoodDialog = new ConsumedFoodDialog(getActivity(),"مربا", LUANCH);
+
+                consumedFoodDialog.show();
+
                 return false;
             }
         });

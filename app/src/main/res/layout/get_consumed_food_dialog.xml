@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <TextView
         android:text="قورمه سبزی"
         android:textSize="16sp"
@@ -27,32 +29,40 @@
     android:id="@+id/meals"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="10dp"
-    android:layout_marginStart="10dp"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
-        android:text="صبحانه"
+        android:background="@drawable/meal_items_background"
+        android:text="شام"
+        android:layout_marginStart="10dp"
         android:textAlignment="center"
-        android:drawableTop="@drawable/ic_add_circle_outline_black_24dp"
+        android:drawableTop="@drawable/ic_dinner"
         android:drawablePadding="5dp"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
     <TextView
-        android:text="صبحانه" android:textAlignment="center"
-        android:layout_weight="1"  android:drawableTop="@drawable/ic_add_circle_outline_black_24dp"
+        android:background="@drawable/meal_items_background"
+        android:layout_marginStart="10dp"
+        android:text="میان وعده" android:textAlignment="center"
+        android:layout_weight="1"  android:drawableTop="@drawable/ic_bread"
         android:drawablePadding="5dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
     <TextView
-        android:text="صبحانه" android:textAlignment="center"
-        android:layout_weight="1"  android:drawableTop="@drawable/ic_add_circle_outline_black_24dp"
+        android:background="@drawable/meal_items_background"
+        android:layout_marginStart="10dp"
+        android:text="نهار" android:textAlignment="center"
+        android:layout_weight="1"  android:drawableTop="@drawable/ic_utensils_alt"
         android:drawablePadding="5dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
     <TextView
+        android:background="@drawable/meal_items_background"
+        android:layout_marginStart="10dp"
         android:text="صبحانه" android:textAlignment="center"
-        android:layout_weight="1"  android:drawableTop="@drawable/ic_add_circle_outline_black_24dp"
+        android:layout_weight="1"  android:drawableTop="@drawable/ic_breakfast"
         android:drawablePadding="5dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
@@ -73,34 +83,49 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:text="گرم"
-            android:textAlignment="center"
-            android:textColor="@color/bmi_25_to_30"
+        <LinearLayout
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/amount_background"/>
-        <TextView
-            android:text="لیوان"
-            android:textAlignment="center"
-            android:textColor="@color/bmi_25_to_30"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/amount_background"
-            />
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginStart="4dp"
+                android:textColor="@color/bmi_30_to_40"
+                android:textColorHint="@color/bmi_20_to_25"
+                android:textAlignment="center"
+                android:id="@+id/glass_edit_text"
+
+                android:textSize="12sp"
+                android:background="@drawable/amount_background"
+                android:hint="لیوان"
+                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="0dp"/>
+            <TextView
+                android:layout_marginStart="4dp"
+                android:textColor="@color/bmi_30_to_40"
+                android:textColorHint="@color/bmi_20_to_25"
+                android:textAlignment="center"
+                android:id="@+id/gram_edit_text"
+                android:textSize="12sp"
+                android:hint="گرم"
+                android:background="@drawable/amount_background"
+                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="0dp"/>
+
+        </LinearLayout>
+
         <EditText
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:textAlignment="center"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingEnd="5dp"
-            android:paddingStart="5dp"
+            android:padding="5dp"
             android:layout_marginTop="5dp"
             android:textColor="@color/bmi_30_to_40"
             android:textColorHint="@color/bmi_20_to_25"
             android:layout_marginEnd="10dp"
+            android:layout_marginStart="4dp"
             android:background="@drawable/amount_background"
             android:hint="میزان مصرف را وارد کنید"
             android:autofillHints="auto fill hint"
@@ -111,6 +136,52 @@
 
 
     </LinearLayout>
+
+    <TextView
+        style="@style/FoodDialogTextViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/ConsumedAmount"
+            android:text="کالری : −"
+            android:id="@+id/Consumed_calories_text_view"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            style="@style/ConsumedAmount"
+            android:text="پروتیین: −"
+            android:id="@+id/Consumed_proteins_text_view"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <Button
+        android:text="ثبت"
+        android:background="@drawable/confirm_button_background"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:layout_margin="12dp"
+        android:id="@+id/consumed_food_confirm_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 

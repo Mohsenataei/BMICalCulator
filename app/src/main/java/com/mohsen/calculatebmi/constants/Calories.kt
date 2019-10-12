@@ -3,31 +3,23 @@ package com.mohsen.calculatebmi.constants
 class Calories {
     companion object {
         // ash ha
-        val ASH_JOO = 250
-        val ASH_DOOGH = 250
-        val ASH_RESHTE = 250
-        val AJIL = 750
-        val AJIL_DARHAM = 650
-        val ARD_ZORRAT = 370
-        val ARD_GANDOM = 360
-        val BISCOEIT = 370
-        val PEANUTS = 560
-        val BADEMJAN = 17
-        val BASTANI  = 190
-        val TOKHMEAFTABGARDAN = 580
-        val OIL = 900
-        val SOOSIS = 300
-        val SOYA = 380
-        val POTATO_KABABI = 93
-        val SHOKOLAT = 500
+        val ASH_JOO = "آش جو"
+        val ASH_DOOGH = "آش دوغ"
+        val ASH_RESHTE = "آش رشته"
+        val AJIL = "آجیل"
+        val AJIL_DARHAM = "آجیل درهم"
+        val ARD_ZORRAT = "آرد ‌ذرت"
+        val ARD_GANDOM = "آرد گندم"
+        val BISCOEIT = "بیسکوییت"
+        val PEANUTS = "کره بادام زمینی"
+        val BADEMJAN = "بادمجان"
+        val BASTANI  = "بستنی"
+        val TOKHMEAFTABGARDAN = "تخمه آفتاب گردان"
+        val OIL = "روغن نباتی"
+        val SOOSIS = "سوسیس"
+        val SOYA = "سویا"
+        val POTATO_KABABI = "سیب زمینی کبایی"
+        val SHOKOLAT = "شکلات"
         // I'll add more calories to this list.
-
-
-
-
-
-
-
-
     }
 }
