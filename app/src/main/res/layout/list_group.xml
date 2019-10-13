@@ -13,6 +13,7 @@
         android:textColor="@color/bmi_30_to_40"
         android:paddingTop="10dp"
         android:paddingRight="30dp"
+        android:fontFamily="@font/iran_sans_normal"
         android:background="@color/white"
         android:paddingBottom="10dp" />
 </LinearLayout>

@@ -125,4 +125,5 @@ public class CalculateBMI extends AppCompatActivity implements BubbleSeekBar.OnP
     public void getProgressOnFinally(BubbleSeekBar bubbleSeekBar, int progress, float progressFloat) {
 
     }
+
 }

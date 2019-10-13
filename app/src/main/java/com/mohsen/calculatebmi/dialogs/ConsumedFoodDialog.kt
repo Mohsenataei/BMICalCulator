@@ -9,11 +9,20 @@ import android.view.Window
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.mohsen.calculatebmi.R
+import com.mohsen.calculatebmi.constants.Calories.Companion.AJIL
+import com.mohsen.calculatebmi.constants.Calories.Companion.AJIL_DARHAM
+import com.mohsen.calculatebmi.constants.Calories.Companion.ARD_GANDOM
+import com.mohsen.calculatebmi.constants.Calories.Companion.ARD_ZORRAT
 import com.mohsen.calculatebmi.constants.Calories.Companion.ASH_DOOGH
 import com.mohsen.calculatebmi.constants.Calories.Companion.ASH_JOO
+import com.mohsen.calculatebmi.constants.Calories.Companion.ASH_RESHTE
+import com.mohsen.calculatebmi.constants.Calories.Companion.BADEMJAN
+import com.mohsen.calculatebmi.constants.Calories.Companion.BISCOEIT
 import com.mohsen.calculatebmi.constants.Calories.Companion.OIL
 import com.mohsen.calculatebmi.constants.Calories.Companion.PEANUTS
 import com.mohsen.calculatebmi.constants.CaloriesList
+import com.mohsen.calculatebmi.constants.TYPE_SPOON
+import com.mohsen.calculatebmi.model.Food
 import kotlinx.android.synthetic.main.get_consumed_food_dialog.*
 
 class ConsumedFoodDialog(context: Context, food_title: String, type: Int) : Dialog(context){
@@ -23,12 +32,15 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: Int) : Dial
     val food = food_title
     val key:  String? = null
     val dilogType = type
+
+    val foodlist = arrayListOf<Food>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.get_consumed_food_dialog)
         window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         instantiateHashMap()
+        initailFoodList()
 
         //counsumed_amount_edit_text.addTextChangedListener()
         gram_edit_text.setOnClickListener {
@@ -74,11 +86,43 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: Int) : Dial
     private fun instantiateHashMap(){
         hashMap.put(ASH_JOO,250)
         hashMap.put(ASH_DOOGH,250)
+        hashMap.put(ASH_RESHTE,250)
+        hashMap.put(AJIL,560)
+        hashMap.put(AJIL_DARHAM,450)
+        hashMap.put(ARD_ZORRAT,370)
+        hashMap.put(ARD_GANDOM,360)
+        hashMap.put(BISCOEIT,370)
+        hashMap.put(BADEMJAN,17)
+
         hashMap.put(PEANUTS,15)
         hashMap.put(OIL,600)
         hashMap.put("مربا", 450)
 //        hashMap.put(Resources.getSystem().getString(R.string.app_name),230)
         caloriesList.setCaloriesMap(hashMap)
 
+    }
+
+    private fun initailFoodList(){
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
+        foodlist.add(Food("عسل",350, TYPE_SPOON))
     }
 }
