@@ -6,19 +6,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
 import android.view.Window
-import androidx.fragment.app.Fragment
 import com.mohsen.calculatebmi.R
 import com.mohsen.calculatebmi.activity.ConsumedCaloriesCalculator
-import com.mohsen.calculatebmi.activity.ui.CaloriesMainPage
-import com.mohsen.calculatebmi.constants.Calories
 import kotlinx.android.synthetic.main.food_item.*
 
 class AddFoodDialog(val mContext : Context): Dialog(mContext) {
 
-    private val BREAKFAST = 0
-    private val LAUNCH = 1
-    private val DINNER = 2
-    private val MIANVADE = 3
+    private val BREAKFAST = "صبحانه"
+    private val LAUNCH = "نهار"
+    private val DINNER = "شام"
+    private val MIANVADE = "میان وعده"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)

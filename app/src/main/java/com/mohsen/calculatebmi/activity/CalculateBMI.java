@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mohsen.calculatebmi.R;
-import com.mohsen.calculatebmi.activity.ui.CaloriesMainPage;
 import com.xw.repo.BubbleSeekBar;
 
 import at.grabner.circleprogress.CircleProgressView;

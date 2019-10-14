@@ -1,4 +1,4 @@
-package com.mohsen.calculatebmi.activity.ui;
+package com.mohsen.calculatebmi.activity;
 
 import android.os.Bundle;
 import android.widget.Button;

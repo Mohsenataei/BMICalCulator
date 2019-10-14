@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.room.Room
 import com.mohsen.calculatebmi.R
 import com.mohsen.calculatebmi.constants.Calories.Companion.AJIL
 import com.mohsen.calculatebmi.constants.Calories.Companion.AJIL_DARHAM
@@ -22,16 +23,24 @@ import com.mohsen.calculatebmi.constants.Calories.Companion.OIL
 import com.mohsen.calculatebmi.constants.Calories.Companion.PEANUTS
 import com.mohsen.calculatebmi.constants.CaloriesList
 import com.mohsen.calculatebmi.constants.TYPE_SPOON
+import com.mohsen.calculatebmi.db.AppDatabase
 import com.mohsen.calculatebmi.model.Food
 import kotlinx.android.synthetic.main.get_consumed_food_dialog.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
-class ConsumedFoodDialog(context: Context, food_title: String, type: Int) : Dialog(context){
+class ConsumedFoodDialog(context: Context, food_title: String, type: String) : Dialog(context){
 
     val hashMap: HashMap<String, Int> = HashMap()
     val caloriesList = CaloriesList()
     val food = food_title
     val key:  String? = null
     val dilogType = type
+    val db = Room.databaseBuilder(
+        context,
+        AppDatabase::class.java, "todo-list.db"
+    ).build()
+    //val db1 = Room.databaseBuilder(context,Food::class.java,"appDAtabase.db")
 
     val foodlist = arrayListOf<Food>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,20 +51,33 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: Int) : Dial
         instantiateHashMap()
         initailFoodList()
 
+        //
+        ///db.foodDao()
         //counsumed_amount_edit_text.addTextChangedListener()
-        gram_edit_text.setOnClickListener {
+        GlobalScope.launch {
+//            Toast.makeText(context,"is it working ?",Toast.LENGTH_SHORT).show()
+//            db.foodDao().insertAll(com.mohsen.calculatebmi.db.entities.Food(1,"pizza",236,"type"))
+            println("worked ?")
+
+        }
+        confirm.setOnClickListener {
             if (counsumed_amount_edit_text.text.isNullOrEmpty()){
                 Toast.makeText(context,"please enter a amount",Toast.LENGTH_SHORT).show()
             }else{
                 val amount = counsumed_amount_edit_text.text
-                val calory = (amount.toString().toInt() * caloriesList.getData(food)) / 100
+                val calory = (hashMap[food]?.times(amount.toString().toInt()))?.div(100)
+
+                    (amount.toString().toInt() * caloriesList.getData(food)) / 100
 
                 Consumed_calories_text_view.text = "کالری: $calory"
-                val proteins = calory / 100
+                val proteins = calory?.div(100)
                 Consumed_proteins_text_view.text = "پروتئین $proteins گرم "
             }
 
         }
+//        glass_edit_text.setOnClickListener {
+//
+//        }
 
         if (food.isNullOrEmpty()){
             Toast.makeText(context,"title not set", Toast.LENGTH_SHORT).show()
@@ -64,20 +86,21 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: Int) : Dial
             food_name.text = food
         }
 
-        when(dilogType){
-            0 -> {
-                Toast.makeText(context,"شما در حال انتخاب صبحانه هستید", Toast.LENGTH_SHORT).show()
-            }
-            1->{
-                Toast.makeText(context,"شما در حال انتخاب نهار هستید", Toast.LENGTH_SHORT).show()
-            }
-            2 ->{
-                Toast.makeText(context,"شما در حال انتخاب میان وعده هستید", Toast.LENGTH_SHORT).show()
-            }
-            3 ->{
-                Toast.makeText(context,"شما در حال انتخاب شام هستید", Toast.LENGTH_SHORT).show()
-            }
-        }
+        Toast.makeText(context,"شما در حال انتخاب $dilogType  هستید", Toast.LENGTH_SHORT).show()
+//        when(dilogType){
+//            0 -> {
+//                Toast.makeText(context,"شما در حال انتخاب صبحانه هستید", Toast.LENGTH_SHORT).show()
+//            }
+//            1->{
+//                Toast.makeText(context,"شما در حال انتخاب نهار هستید", Toast.LENGTH_SHORT).show()
+//            }
+//            2 ->{
+//                Toast.makeText(context,"شما در حال انتخاب میان وعده هستید", Toast.LENGTH_SHORT).show()
+//            }
+//            3 ->{
+//                Toast.makeText(context,"شما در حال انتخاب شام هستید", Toast.LENGTH_SHORT).show()
+//            }
+//        }
 
 
     }
@@ -93,7 +116,7 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: Int) : Dial
         hashMap.put(ARD_GANDOM,360)
         hashMap.put(BISCOEIT,370)
         hashMap.put(BADEMJAN,17)
-
+        hashMap.put("آبنبات", 20)
         hashMap.put(PEANUTS,15)
         hashMap.put(OIL,600)
         hashMap.put("مربا", 450)

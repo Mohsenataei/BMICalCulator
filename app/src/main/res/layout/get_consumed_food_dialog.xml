@@ -79,11 +79,19 @@
         android:layout_height="wrap_content"/>
 
     <LinearLayout
+        android:layout_marginBottom="5dp"
         android:weightSum="5"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
+        <Button
+            android:id="@+id/confirm"
+            android:text="تایید"
+            style="?attr/borderlessButtonStyle"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+        <!--<LinearLayout
             android:layout_marginStart="10dp"
             android:orientation="vertical"
             android:layout_weight="1"
@@ -115,19 +123,18 @@
                 android:layout_width="50dp"
                 android:layout_height="0dp"/>
 
-        </LinearLayout>
+        </LinearLayout>-->
 
         <EditText
             android:layout_weight="4"
             android:textAlignment="center"
             android:padding="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="4dp"
             android:textColor="@color/bmi_30_to_40"
             android:textColorHint="@color/bmi_20_to_25"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="4dp"
             android:background="@drawable/amount_background"
-            android:hint="میزان مصرف را وارد کنید"
+            android:hint="میزان مصرف را به گرم وارد کنید"
             android:autofillHints="auto fill hint"
             android:id="@+id/counsumed_amount_edit_text"
             android:inputType="number"
@@ -164,7 +171,7 @@
 
         <TextView
             style="@style/ConsumedAmount"
-            android:text="پروتیین: −"
+            android:text="پروتئین: −"
             android:id="@+id/Consumed_proteins_text_view"
             android:layout_weight="1"
             android:layout_marginStart="10dp"

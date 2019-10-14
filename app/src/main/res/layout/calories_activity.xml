@@ -8,7 +8,7 @@
     <include layout="@layout/app_bar"/>
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="55dp"
         android:minHeight="?actionBarSize"
         android:id="@+id/calories_tab"
         android:layout_width="match_parent"
@@ -24,6 +24,7 @@
         android:layout_below="@id/calories_tab"
         android:layout_marginTop="10dp"
         android:id="@+id/viewpager"
+        android:overScrollMode="never"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

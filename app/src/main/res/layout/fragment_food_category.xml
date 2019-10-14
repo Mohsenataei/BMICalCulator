@@ -21,6 +21,7 @@
             android:indicatorRight="?android:attr/expandableListPreferredItemIndicatorRight"
             android:divider="@color/bmi_30_to_40"
             android:childDivider="@color/bmi_more_than_40"
+
             android:dividerHeight="1dp" />
     </androidx.cardview.widget.CardView>
 

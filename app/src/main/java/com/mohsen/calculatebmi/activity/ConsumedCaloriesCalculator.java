@@ -3,7 +3,7 @@ package com.mohsen.calculatebmi.activity;
 import android.content.Context;
 
 import android.os.Bundle;
-
+import android.util.Log;
 
 
 import androidx.annotation.Nullable;
@@ -25,6 +25,8 @@ public class ConsumedCaloriesCalculator extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private TabAdapter tabAdapter;
+    private static final String TAG = "ConsumedCaloriesCalcula";
+    private String mealType;
 
 
     private int[] tabIcons = {
@@ -32,6 +34,13 @@ public class ConsumedCaloriesCalculator extends AppCompatActivity {
             R.drawable.ic_star_border_black_24dp,
             R.drawable.ic_person_add_black_24dp
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mealType = getMeal();
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +51,28 @@ public class ConsumedCaloriesCalculator extends AppCompatActivity {
 
         tabAdapter = new TabAdapter(getSupportFragmentManager(),this);
 
+        mealType =  getMeal();
+        if(mealType.isEmpty()){
+            Log.d(TAG, "onCreate: string extra founded");
+        }else {
+            Log.d(TAG, "onCreate: string extra not retrieve successfully");
+        }
+//        if (getIntent().hasExtra("type")){
+//            mealType = getIntent().getStringExtra("type");
+//            Log.d(TAG, "onCreate: string extra founded"+mealType);
+//        }else {
+//            mealType = "کله پاچه";
+//        }
+
+
+        Bundle bundle = new Bundle();
+        bundle.putString("type",mealType);
+        FoodCategoryFragment foodCategoryFragment = new FoodCategoryFragment();
+        foodCategoryFragment.setArguments(bundle);
         tabAdapter.addFragment(new PersonalFoods(),"غذا های شخصی", tabIcons[2]);
         tabAdapter.addFragment(new FavouriteFoodsFragment(),"غذا های مورد علاقه", tabIcons[1]);
-        tabAdapter.addFragment(new FoodCategoryFragment(),"لیست غذا ها",tabIcons[0]);
-      //  setTabLayoutCustomTextView();
+        tabAdapter.addFragment(foodCategoryFragment,"لیست غذا ها",tabIcons[0]);
+
         viewPager.setAdapter(tabAdapter);
 
         for (int i = 0; i < tabLayout.getTabCount(); i++) {
@@ -62,9 +89,6 @@ public class ConsumedCaloriesCalculator extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(viewPager);
         highLightCurrentTab(2);
-//        tabLayout.getTabAt(0).setIcon(tabIcons[2]);
-//        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-//        tabLayout.getTabAt(2).setIcon(tabIcons[0]);
 
         viewPager.setCurrentItem(2);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -97,5 +121,13 @@ public class ConsumedCaloriesCalculator extends AppCompatActivity {
         tab.setCustomView(null);
         tab.setCustomView(tabAdapter.getSelectedTabView(position));
     }
+    private String getMeal (){
+        if (getIntent().hasExtra("type")){
+            Log.d(TAG, "getMeal: string extra founded");
+            return getIntent().getStringExtra("type");
+        }
+        return "asghar";
+    }
+
 
 }

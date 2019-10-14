@@ -101,18 +101,20 @@
                 android:textSize="16sp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:background="@drawable/add_food_item_background"
                 android:id="@+id/launch"
-                android:text="نهار"
-                android:paddingTop="10dp"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:drawableTop="@drawable/ic_stretching_exercises"
-                android:textSize="16sp"
-                android:drawablePadding="10dp"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/add_food_item_background"
+                android:drawableTop="@drawable/ic_stretching_exercises"
+                android:drawablePadding="10dp"
+                android:paddingTop="10dp"
+                android:text="نهار"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
             <TextView
                 android:background="@drawable/add_food_item_background"
                 android:drawableTop="@drawable/ic_water"

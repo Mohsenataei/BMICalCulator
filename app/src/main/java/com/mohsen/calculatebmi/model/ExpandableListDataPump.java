@@ -21,7 +21,7 @@ public class ExpandableListDataPump {
         cricket.add("برگه هلو");
         cricket.add("پسته");
         cricket.add("ذرت بوداده");
-        cricket.add("تخمع آفتاب گردان");
+        cricket.add("تخمه آفتاب گردان");
         cricket.add("پفک");
         cricket.add("چیپس");
         cricket.add("سنجد");
