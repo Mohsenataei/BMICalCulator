@@ -16,8 +16,10 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import com.mohsen.calculatebmi.R;
+import com.mohsen.calculatebmi.Utils.OnDialogClicked;
 import com.mohsen.calculatebmi.adapter.CustomExpandableListAdapter;
 import com.mohsen.calculatebmi.dialogs.ConsumedFoodDialog;
+import com.mohsen.calculatebmi.model.AddedFood;
 import com.mohsen.calculatebmi.model.ExpandableListDataPump;
 
 import org.jetbrains.annotations.NotNull;
@@ -36,6 +38,8 @@ public class FoodCategoryFragment extends Fragment {
      private static final int LUANCH = 1;
      private static final int DINNER = 2;
      private static final int MIANVADE = 3;
+     private List<AddedFood> selectedFoods =new ArrayList<>();
+
      private String meal;
     private static final String TAG = "ConsumedCaloriesCalcula";
 
@@ -43,6 +47,10 @@ public class FoodCategoryFragment extends Fragment {
 
     public FoodCategoryFragment() {
         // Required empty public constructor
+    }
+
+    public List<AddedFood> getSelectedFoods(){
+        return selectedFoods;
     }
 
 
@@ -102,18 +110,37 @@ public class FoodCategoryFragment extends Fragment {
                                 expandableListTitle.get(groupPosition)).get(
                                 childPosition), Toast.LENGTH_SHORT
                 ).show();
-                ConsumedFoodDialog consumedFoodDialog = new ConsumedFoodDialog(getActivity(),
+                ConsumedFoodDialog consumedFoodDialog = new ConsumedFoodDialog(getContext(),
                         expandableListDetail.get(
                                 expandableListTitle.get(groupPosition)).get(
                                 childPosition),
-                        meal);
+                        meal,
+                        new OnDialogClicked() {
+                            @Override
+                            public void onClick(AddedFood addedFood) {
+                                Toast.makeText(getContext(), "do something", Toast.LENGTH_SHORT).show();
+                                selectedFoods.add(addedFood);
+                            }
+                        }
+                );
 
                 consumedFoodDialog.show();
 
                 return false;
             }
         });
+        Toast.makeText(getContext(), "number of items" + selectedFoods.size(), Toast.LENGTH_SHORT).show();
     }
 
- }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Toast.makeText(getContext(), "number of items" + selectedFoods.size(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+}
 

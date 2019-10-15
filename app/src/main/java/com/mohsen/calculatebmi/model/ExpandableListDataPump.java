@@ -1,13 +1,31 @@
 package com.mohsen.calculatebmi.model;
 
+import android.content.Context;
+
+import com.mohsen.calculatebmi.db.AppDatabase;
+import com.mohsen.calculatebmi.db.daos.FoodDao;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class ExpandableListDataPump {
 
+    private Context context;
+    private AppDatabase database = AppDatabase.Companion.getDatabase(context);
+    private FoodDao foodDao;
+
+    public ExpandableListDataPump(Context context) {
+        this.context = context;
+    }
+
+    //public HashMap<String, >
     public static HashMap<String, List<String>> getData() {
         HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
+
+        List<Food> foods = new ArrayList<>();
+        //AppDatabase database = AppDatabase.Companion.getDatabase(context);
+
 
         List<String> cricket = new ArrayList<String>();
         cricket.add("سویا");

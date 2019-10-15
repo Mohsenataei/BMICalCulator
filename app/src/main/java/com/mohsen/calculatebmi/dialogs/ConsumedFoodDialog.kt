@@ -6,10 +6,13 @@ import android.content.res.Resources
 import android.os.Bundle
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.AutoCompleteTextView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.room.Room
 import com.mohsen.calculatebmi.R
+import com.mohsen.calculatebmi.Utils.OnDialogClicked
 import com.mohsen.calculatebmi.constants.Calories.Companion.AJIL
 import com.mohsen.calculatebmi.constants.Calories.Companion.AJIL_DARHAM
 import com.mohsen.calculatebmi.constants.Calories.Companion.ARD_GANDOM
@@ -24,25 +27,34 @@ import com.mohsen.calculatebmi.constants.Calories.Companion.PEANUTS
 import com.mohsen.calculatebmi.constants.CaloriesList
 import com.mohsen.calculatebmi.constants.TYPE_SPOON
 import com.mohsen.calculatebmi.db.AppDatabase
+import com.mohsen.calculatebmi.db.daos.FoodDao
+import com.mohsen.calculatebmi.db.entities.AddedFood
 import com.mohsen.calculatebmi.model.Food
+import kotlinx.android.synthetic.main.food_item.*
 import kotlinx.android.synthetic.main.get_consumed_food_dialog.*
+import kotlinx.android.synthetic.main.get_consumed_food_dialog.breakfast
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.*
 
-class ConsumedFoodDialog(context: Context, food_title: String, type: String) : Dialog(context){
+class ConsumedFoodDialog(context: Context, food_title: String, type: String, onClick: OnDialogClicked) : Dialog(context){
 
     val hashMap: HashMap<String, Int> = HashMap()
     val caloriesList = CaloriesList()
     val food = food_title
     val key:  String? = null
     val dilogType = type
+    val onDialogClicked = onClick
     val db = Room.databaseBuilder(
         context,
         AppDatabase::class.java, "todo-list.db"
     ).build()
     //val db1 = Room.databaseBuilder(context,Food::class.java,"appDAtabase.db")
+    private val database = AppDatabase.getDatabase(context)
+    private val FoodDao = database.foodDao()
 
     val foodlist = arrayListOf<Food>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -51,6 +63,9 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: String) : D
         instantiateHashMap()
         initailFoodList()
 
+
+        val Food = FoodDao.findByTitle("آرد گندم")
+        println(Food.type)
         //
         ///db.foodDao()
         //counsumed_amount_edit_text.addTextChangedListener()
@@ -60,7 +75,7 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: String) : D
             println("worked ?")
 
         }
-        confirm.setOnClickListener {
+        glass_edit_text.setOnClickListener {
             if (counsumed_amount_edit_text.text.isNullOrEmpty()){
                 Toast.makeText(context,"please enter a amount",Toast.LENGTH_SHORT).show()
             }else{
@@ -71,9 +86,24 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: String) : D
 
                 Consumed_calories_text_view.text = "کالری: $calory"
                 val proteins = calory?.div(100)
-                Consumed_proteins_text_view.text = "پروتئین $proteins گرم "
+                Consumed_proteins_text_view.text = Food.calory.toString()
+
+
+                    //"پروتئین $proteins گرم "
             }
 
+        }
+
+        var i = 0
+
+        consumed_food_confirm_button.setOnClickListener {
+           // onDialogClicked.onClick(AddedFood("pizza",120,"geram",4,"fastfood",0))
+//
+//            db.addedFoodDao().insertAll(AddedFood(++i,"havij",120,"sham","fastfood",0,12))
+//            dismiss()
+            GlobalScope.launch {
+
+            }
         }
 //        glass_edit_text.setOnClickListener {
 //
@@ -102,7 +132,20 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: String) : D
 //            }
 //        }
 
+            breakfast.setOnClickListener {
+//                breakfast.setCompoundDrawables(null,Resources.getSystem().getDrawable(R.drawable.ic_breakfast_onclick),null,null)
+//                breakfast.setCompoundDrawables(null,Resources.getSystem().getDrawable(R.drawable.ic_breakfast_onclick,Resources.getSystem().newTheme()),null,null)
+            }
 
+
+    }
+
+    private fun setTextViewDrawableTintColorOnClick(textView: TextView ){
+
+        val drawable = textView.compoundDrawables
+        if (drawable != null){
+            //drawable.fil
+        }
     }
 
 

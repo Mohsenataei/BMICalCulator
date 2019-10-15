@@ -8,6 +8,19 @@
     android:layout_height="wrap_content">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     <TextView
         android:text="افزودن"
         android:id="@+id/add_food_text_view"

@@ -12,6 +12,9 @@ interface FoodDao {
     @Query("SELECT * FROM food_items WHERE food_name LIKE :title")
     fun findByTitle(title: String): Food
 
+//    @Query("SELECT * FROM food_items WHERE category LIKE :category")
+//    fun findByCategory(category: String)
+
     @Insert
     fun insertAll(vararg todo: Food)
 

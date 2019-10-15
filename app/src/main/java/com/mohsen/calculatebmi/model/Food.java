@@ -5,12 +5,14 @@ import java.util.HashMap;
 public class Food {
     private String name;
     private int calory;
-    private HashMap<String, Integer> map;
+//    private HashMap<String, Integer> map;
     private String type;
+    private String category;
+    private int id;
 
     public Food(String name, int calory, String type) {
-        map = new HashMap();
-        map.put(name,calory);
+        //  map = new HashMap();
+//        map.put(name,calory);
         this.name = name;
         this.calory = calory;
         this.type = type;
@@ -26,10 +28,6 @@ public class Food {
 
     public int getCalory() {
         return calory;
-    }
-
-    public int getCaleryByStringKey(String key){
-        return map.get(key);
     }
 
     public void setCalory(int calory) {

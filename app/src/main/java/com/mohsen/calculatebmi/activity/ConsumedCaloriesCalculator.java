@@ -2,8 +2,10 @@ package com.mohsen.calculatebmi.activity;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
@@ -103,6 +105,8 @@ public class ConsumedCaloriesCalculator extends AppCompatActivity {
             public void onPageScrollStateChanged(int state) {
             }
         });
+
+        Toast.makeText(this, "number of items, again: " + foodCategoryFragment.getSelectedFoods().size(), Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -129,5 +133,8 @@ public class ConsumedCaloriesCalculator extends AppCompatActivity {
         return "asghar";
     }
 
+    private void setResult(){
+        Intent intent = new Intent();
 
+    }
 }
