@@ -8,14 +8,14 @@ import com.mohsen.calculatebmi.db.entities.Food
 interface AddedFoodDao {
 
     @Query("select * from Added_Foods")
-    fun getAll(): List<AddedFood>
+    suspend fun getAll(): List<AddedFood>
 
-    @Insert
-    fun insertAll(vararg todo: AddedFood)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(vararg todo: AddedFood)
 
     @Delete
-    fun delete(todo: Food)
+    suspend fun delete(todo: Food)
 
     @Update
-    fun updateTodo(vararg todos: AddedFood)
+    suspend fun updateTodo(vararg todos: AddedFood)
 }

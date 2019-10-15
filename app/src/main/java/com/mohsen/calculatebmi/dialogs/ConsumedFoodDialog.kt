@@ -64,8 +64,8 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: String, onC
         initailFoodList()
 
 
-        val Food = FoodDao.findByTitle("آرد گندم")
-        println(Food.type)
+        //val Food = FoodDao.findByTitle("آرد گندم")
+      //  println(Food.type)
         //
         ///db.foodDao()
         //counsumed_amount_edit_text.addTextChangedListener()
@@ -86,7 +86,7 @@ class ConsumedFoodDialog(context: Context, food_title: String, type: String, onC
 
                 Consumed_calories_text_view.text = "کالری: $calory"
                 val proteins = calory?.div(100)
-                Consumed_proteins_text_view.text = Food.calory.toString()
+               // Consumed_proteins_text_view.text = Food.calory.toString()
 
 
                     //"پروتئین $proteins گرم "

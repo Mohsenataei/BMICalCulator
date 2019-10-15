@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class FoodCategoryFragment extends Fragment {
+public class FoodCategoryFragment extends BaseFragment {
 
     private ExpandableListView expandableListView;
     private ExpandableListAdapter expandableListAdapter;
@@ -120,9 +120,11 @@ public class FoodCategoryFragment extends Fragment {
                             public void onClick(AddedFood addedFood) {
                                 Toast.makeText(getContext(), "do something", Toast.LENGTH_SHORT).show();
                                 selectedFoods.add(addedFood);
+
                             }
                         }
                 );
+
 
                 consumedFoodDialog.show();
 
@@ -131,6 +133,7 @@ public class FoodCategoryFragment extends Fragment {
         });
         Toast.makeText(getContext(), "number of items" + selectedFoods.size(), Toast.LENGTH_SHORT).show();
     }
+
 
     @Override
     public void onResume() {

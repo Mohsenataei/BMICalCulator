@@ -7,21 +7,21 @@ import com.mohsen.calculatebmi.db.entities.Food
 interface FoodDao {
 
     @Query("select * from food_items")
-    fun getAll(): List<Food>
+    suspend fun getAll(): List<Food>
 
     @Query("SELECT * FROM food_items WHERE food_name LIKE :title")
-    fun findByTitle(title: String): Food
+    suspend fun findByTitle(title: String): Food
 
 //    @Query("SELECT * FROM food_items WHERE category LIKE :category")
 //    fun findByCategory(category: String)
 
     @Insert
-    fun insertAll(vararg todo: Food)
+    suspend fun insertAll(vararg todo: Food)
 
     @Delete
-    fun delete(todo: Food)
+    suspend fun delete(todo: Food)
 
     @Update
-    fun updateTodo(vararg todos: Food)
+    suspend fun updateTodo(vararg todos: Food)
 
 }

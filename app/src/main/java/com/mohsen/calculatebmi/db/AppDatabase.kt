@@ -12,7 +12,7 @@ import com.mohsen.calculatebmi.db.entities.AddedFood
 import com.mohsen.calculatebmi.db.entities.Food
 import java.security.AccessControlContext
 
-@Database(entities = arrayOf(Food::class, AddedFood::class), version = 1)
+@Database(entities = arrayOf(Food::class, AddedFood::class), version = 2)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun foodDao(): FoodDao
     abstract fun addedFoodDao(): AddedFoodDao
